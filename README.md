@@ -2,7 +2,7 @@
 
 > **Disciplina:** Linguagem Orientada a Objetos  
 > **Tema da prática:** Aplicação simples de gerenciamento bancário em Java (POO)  
-> **Autor(a):** _[preencha seu nome aqui]_ — _[turma/matrícula]_
+> **Autor(a):** _Victor Pereira Gurgel_ — _38820904_
 
 ---
 
@@ -220,116 +220,8 @@ git push -u origin master   # ou main, conforme configuração
 
 ---
 
-## 10) Código-fonte (referência)
-
-> Os trechos abaixo são equivalentes ao código do projeto e servem como referência resumida.
-
-**ContaBancaria.java**
-```java
-class ContaBancaria {
-    private String nome;
-    private String sobrenome;
-    private String cpf;
-    private double saldo;
-
-    public ContaBancaria(String nome, String sobrenome, String cpf) {
-        this.nome = nome;
-        this.sobrenome = sobrenome;
-        this.cpf = cpf;
-        this.saldo = 0.0;
-    }
-
-    public double consultarSaldo() {
-        return this.saldo;
-    }
-
-    public void depositar(double valor) {
-        if (valor > 0) {
-            this.saldo += valor;
-            System.out.println("Depósito de R$ " + valor + " realizado com sucesso.");
-        } else {
-            System.out.println("Valor de depósito inválido.");
-        }
-    }
-
-    public void sacar(double valor) {
-        if (valor > 0) {
-            if (valor <= this.saldo) {
-                this.saldo -= valor;
-                System.out.println("Saque de R$ " + valor + " realizado com sucesso.");
-            } else {
-                System.out.println("Saldo insuficiente para realizar o saque.");
-            }
-        } else {
-            System.out.println("Valor de saque inválido.");
-        }
-    }
-}
-```
-
-**GerenciaBanco.java**
-```java
-public class GerenciaBanco {
-
-    public static void exibirMenu() {
-        System.out.println("\n=== Menu de Operações ===");
-        System.out.println("1. Consultar saldo");
-        System.out.println("2. Realizar depósito");
-        System.out.println("3. Realizar saque");
-        System.out.println("4. Encerrar aplicação");
-        System.out.print("Escolha uma opção: ");
-    }
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Informe seu nome: ");
-        String nome = scanner.nextLine();
-
-        System.out.print("Informe seu sobrenome: ");
-        String sobrenome = scanner.nextLine();
-
-        System.out.print("Informe seu CPF: ");
-        String cpf = scanner.nextLine();
-
-        ContaBancaria conta = new ContaBancaria(nome, sobrenome, cpf);
-
-        int opcao;
-        do {
-            exibirMenu();
-            opcao = scanner.nextInt();
-
-            switch (opcao) {
-                case 1:
-                    System.out.println("Saldo atual: R$ " + conta.consultarSaldo());
-                    break;
-                case 2:
-                    System.out.print("Informe o valor para depósito: ");
-                    double valorDeposito = scanner.nextDouble();
-                    conta.depositar(valorDeposito);
-                    break;
-                case 3:
-                    System.out.print("Informe o valor para saque: ");
-                    double valorSaque = scanner.nextDouble();
-                    conta.sacar(valorSaque);
-                    break;
-                case 4:
-                    System.out.println("Encerrando aplicação... Obrigado por utilizar nosso banco, " + nome + "!");
-                    break;
-                default:
-                    System.out.println("Opção inválida. Tente novamente.");
-            }
-        } while (opcao != 4);
-
-        scanner.close();
-    }
-}
-```
-
----
-
-## 11) Conclusão
+## 10) Conclusão
 
 O projeto cumpriu os objetivos da prática: **apliquei POO em Java** usando classes, métodos, encapsulamento e estruturas de controle, entregando uma aplicação funcional de console. Além disso, deixei **documentado** o processo de desenvolvimento e **versionado** o código no GitHub para comprovar a autoria.
 
-> _Ass.:_ **[preencha seu nome]** — **[data]**
+> _Ass.:_ **Victor Pereira Gurgel** — **09/09/2025**
